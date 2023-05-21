@@ -1,32 +1,19 @@
-package com.somil.blog.blogappapis.entities;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+package com.somil.blog.blogappapis.payloads;
 
-@Entity(name = "Users")
-@Table(name = "Users")
-public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class UserDto {
     private int id;
-
-    @Column(name = "User_Name")
     private String name;
     private String email;
     private String password;
     private String about;
-    public User(int id, String name, String email, String password, String about) {
+    public UserDto(int id, String name, String email, String password, String about) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
         this.about = about;
     }
-    public User() {
+    public UserDto() {
     }
     public int getId() {
         return id;
@@ -60,8 +47,8 @@ public class User {
     }
     @Override
     public String toString() {
-        return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", about=" + about
-                + "]";
+        return "UserDto [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", about="
+                + about + "]";
     }
 
     
